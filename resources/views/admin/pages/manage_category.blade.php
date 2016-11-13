@@ -44,9 +44,15 @@
                             <?php }?>
                         </td>
                         <td class="center">
-                            <a class="btn btn-success" href="#">
+                            <?php if($v_category->publication_status==1){?>
+                            <a class="btn btn-danger" href="#" title="Unpublish">
+                                <i class="halflings-icon white download"></i>  
+                            </a>
+                            <?php }else{?>
+                            <a class="btn btn-success" href="#" title="Publish">
                                 <i class="halflings-icon white zoom-in"></i>  
                             </a>
+                             <?php }?>
                             <a class="btn btn-info" href="#">
                                 <i class="halflings-icon white edit"></i>  
                             </a>
