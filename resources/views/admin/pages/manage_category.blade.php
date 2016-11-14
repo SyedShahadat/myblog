@@ -45,7 +45,7 @@
                         </td>
                         <td class="center">
                             <?php if($v_category->publication_status==1){?>
-                            <a class="btn btn-danger" href="#" title="Unpublish">
+                            <a class="btn btn-danger" href="{{URL::to('/unpublished/'.$v_category->category_id)}}" title="Unpublish">
                                 <i class="halflings-icon white download"></i>  
                             </a>
                             <?php }else{?>

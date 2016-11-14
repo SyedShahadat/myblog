@@ -57,6 +57,10 @@ class SuperAdminController extends Controller
         return view('admin.admin_master')
         ->with('admin_content',$manage_category);
     }
+    public function unpublished_category($id){
+        echo 'sdhdhsdfg'.$id;
+    }
+
     /**
      * Show the form for creating a new resource.
      *

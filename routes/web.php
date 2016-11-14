@@ -47,8 +47,9 @@ Route::get('/dashboard','SuperAdminController@index');
 Route::get('/add-category','SuperAdminController@add_category');
 Route::post('/save-category','SuperAdminController@save_category');
 Route::get('/manage-category','SuperAdminController@manage_category');
-Route::get('/logout','SuperAdminController@logout');
 
+Route::get('/unpublished/{id}','SuperAdminController@unpublished_category');
+Route::get('/logout','SuperAdminController@logout');
 /*
  * End SuperAdmin controller
  */
