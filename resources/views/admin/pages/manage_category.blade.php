@@ -46,17 +46,17 @@
                         <td class="center">
                             <?php if($v_category->publication_status==1){?>
                             <a class="btn btn-danger" href="{{URL::to('/unpublished/'.$v_category->category_id)}}" title="Unpublish">
-                                <i class="halflings-icon white download"></i>  
+                                <i class="halflings-icon white thumbs-down"></i>  
                             </a>
                             <?php }else{?>
-                            <a class="btn btn-success" href="#" title="Publish">
-                                <i class="halflings-icon white zoom-in"></i>  
+                            <a class="btn btn-success" href="{{URL::to('/published/'.$v_category->category_id)}}" title="Publish">
+                                <i class="halflings-icon white thumbs-up"></i>  
                             </a>
                              <?php }?>
                             <a class="btn btn-info" href="#">
                                 <i class="halflings-icon white edit"></i>  
                             </a>
-                            <a class="btn btn-danger" href="#">
+                            <a class="btn btn-danger" href="{{URL::to('/delete-category/'.$v_category->category_id)}}" onclick="return confirmDelete()">
                                 <i class="halflings-icon white trash"></i> 
                             </a>
                         </td>

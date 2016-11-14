@@ -36,7 +36,17 @@
         <!-- start: Favicon -->
         <link rel="shortcut icon" href="{{asset('admin_asset/img/favicon.ico')}}">
         <!-- end: Favicon -->
-
+        
+        <script>
+            function confirmDelete(){
+                var res=confirm('Do you really want to delete?');
+                if(res){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+            </script>
 
 
 
