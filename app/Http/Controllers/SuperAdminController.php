@@ -74,7 +74,30 @@ class SuperAdminController extends Controller
                 ->where('category_id',$id)
                 ->delete();
         return Redirect::to('/manage-category');
-
+    }
+    public function edit_category($id){
+        $result=DB::table('tbl_category')
+                ->where('category_id',$id)
+                ->first();
+        $pages=view('admin.pages.edit_category')->with('category_data',$result);
+        return view('admin.admin_master')
+        ->with('admin_content',$pages);
+    }
+    
+    public function update_category(Request $request){
+        $data=array();
+        $category_id=$request->category_id;
+        $data['category_name']=$request->category_name;
+        $data['category_description']=$request->category_description;
+        $data['publication_status']=$request->publication_status;
+        $data['updated_at'] =new \DateTime();
+//        print_r($data);
+        DB::table('tbl_category')
+                ->where('category_id',$category_id)
+                ->update($data);
+        Session::put('message','Category info update successfully!');
+        return Redirect::to('/manage-category');
+        
     }
 
     /**

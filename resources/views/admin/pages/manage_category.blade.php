@@ -20,6 +20,15 @@
             </div>
         </div>
         <div class="box-content">
+            <h3 style="color: green;">
+                <?php
+                $message=Session::get('message');
+                if($message){
+                    echo $message;
+                    Session::put('message',Null);
+                }
+                ?>
+            </h3>
             <table class="table table-striped table-bordered bootstrap-datatable datatable">
                 <thead>
                     <tr>
@@ -53,7 +62,7 @@
                                 <i class="halflings-icon white thumbs-up"></i>  
                             </a>
                              <?php }?>
-                            <a class="btn btn-info" href="#">
+                            <a class="btn btn-info" href="{{URL::to('/edit-category/'.$v_category->category_id)}}">
                                 <i class="halflings-icon white edit"></i>  
                             </a>
                             <a class="btn btn-danger" href="{{URL::to('/delete-category/'.$v_category->category_id)}}" onclick="return confirmDelete()">
