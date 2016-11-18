@@ -43,17 +43,27 @@ Route::post('/admin-login-check','AdminController@login_check');
 /*
  * Start SuperAdmin Controller
  */
+Route::get('/logout','SuperAdminController@logout');
+
+//Category Portion
 Route::get('/dashboard','SuperAdminController@index');
 Route::get('/add-category','SuperAdminController@add_category');
 Route::post('/save-category','SuperAdminController@save_category');
 Route::get('/manage-category','SuperAdminController@manage_category');
-
 Route::get('/unpublished/{id}','SuperAdminController@unpublished_category');
 Route::get('/published/{id}','SuperAdminController@published_category');
 Route::get('/delete-category/{id}','SuperAdminController@delete_category');
 Route::get('/edit-category/{id}','SuperAdminController@edit_category');
-Route::get('/logout','SuperAdminController@logout');
 Route::post('/update-category','SuperAdminController@update_category');
+
+//Blog Portion
+Route::get('/add-blog','SuperAdminController@add_blog');
+Route::post('/save-blog','SuperAdminController@save_blog');
+Route::get('/manage-blog','SuperAdminController@manage_blog');
+Route::get('/unpublished-blog/{id}','SuperAdminController@unpublished_blog');
+Route::get('/published-blog/{id}','SuperAdminController@published_blog');
+Route::get('/delete-blog/{id}','SuperAdminController@delete_blog');
+
 
 /*
  * End SuperAdmin controller

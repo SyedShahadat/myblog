@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use DB;
 
 class WelcomeController extends Controller {
 
@@ -14,8 +15,11 @@ class WelcomeController extends Controller {
      */
     
     public function index() {
+        $data=DB::table('tbl_category')
+                ->where('publication_status',1)
+                ->get();
         $home_content = view('pages.home');
-        $category = view('pages.category');
+        $category = view('pages.category')->with('category_data',$data);
         return view('master')
                         ->with('content', $home_content)
                         ->with('category', $category);
