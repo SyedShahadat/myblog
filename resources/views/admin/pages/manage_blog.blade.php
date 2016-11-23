@@ -3,7 +3,7 @@
 <ul class="breadcrumb">
     <li>
         <i class="icon-home"></i>
-        <a href="index.html">Home</a> 
+        <a href="{{URL::to('/dashboard')}}">Home</a> 
         <i class="icon-angle-right"></i>
     </li>
     <li><a href="#">Manage Category</a></li>
@@ -25,7 +25,7 @@
                 <thead>
                     <tr >
                         <th style="text-align: center">Blog ID</th>
-<!--                        <th style="text-align: center">Blog Image</th>-->
+                        <th style="text-align: center">Blog Image</th>
                         <th style="text-align: center">Category Name</th>
                         <th style="text-align: center">Blog Title</th>
                         <th style="text-align: center">Publication Status</th>
@@ -36,6 +36,7 @@
                     <?php foreach ($all_blog_data as $blog_data){?>
                     <tr>
                         <td style="text-align: center">{{$blog_data->blog_id}}</td>
+                        <td style="text-align: center"><img src="{{$blog_data->blog_image}}" width="50px" height="30px" alt="{{$blog_data->blog_id}}"></td>
                         <td style="text-align: center" class="center">{{$blog_data->category_name}}</td>
                         <td style="text-align: center" class="center">{{$blog_data->blog_title}}</td>
                         <td style="text-align: center" class="center">

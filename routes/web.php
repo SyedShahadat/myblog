@@ -63,6 +63,8 @@ Route::get('/manage-blog','SuperAdminController@manage_blog');
 Route::get('/unpublished-blog/{id}','SuperAdminController@unpublished_blog');
 Route::get('/published-blog/{id}','SuperAdminController@published_blog');
 Route::get('/delete-blog/{id}','SuperAdminController@delete_blog');
+Route::get('/edit-blog/{id}','SuperAdminController@edit_blog');
+
 
 
 /*

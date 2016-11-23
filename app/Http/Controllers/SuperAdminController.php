@@ -121,7 +121,7 @@ class SuperAdminController extends Controller
     }
     
     public function save_blog(Request $request) {
-
+        
         $image = $request->file('image');
         if ($image) {
             $image_name = str_random(20);
@@ -183,6 +183,14 @@ class SuperAdminController extends Controller
                 ->where('blog_id',$id)
                 ->delete();
         return Redirect::to('/manage-blog');
+    }
+    
+    public function edit_blog($id){
+//        DB::table('tbl_blog')
+//                ->where('blog_id',$id)
+//                ->delete();
+//        return ;
+        echo 'fsdffa'.$id;
     }
 
     

@@ -15,10 +15,13 @@ class WelcomeController extends Controller {
      */
     
     public function index() {
+        $blog=DB::table('tbl_blog')
+                ->where('publication_status',1)
+                ->get();
         $data=DB::table('tbl_category')
                 ->where('publication_status',1)
                 ->get();
-        $home_content = view('pages.home');
+        $home_content = view('pages.home')->with('blog_data',$blog);
         $category = view('pages.category')->with('category_data',$data);
         return view('master')
                         ->with('content', $home_content)
